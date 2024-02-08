@@ -5,8 +5,11 @@ using System.Text;
 
 public class AesEncryptDecrypt
 {
-    private static readonly byte[] Key = Encoding.UTF8.GetBytes("ThisIsASecretKey123".PadRight(32, '\0')).Take(32).ToArray();
-    private static readonly byte[] IV = Encoding.UTF8.GetBytes("InitializationVector".PadRight(16, '\0')).Take(16).ToArray();
+    //32 for key
+    private static readonly byte[] Key = Encoding.UTF8.GetBytes("ChiavePippo".PadRight(32, '\0')).Take(32).ToArray();
+
+    //16 bit for initialization vector 
+    private static readonly byte[] IV = Encoding.UTF8.GetBytes("VettoreIniziale".PadRight(16, '\0')).Take(16).ToArray(); 
 
     public static string Encrypt(string plainText)
     {
