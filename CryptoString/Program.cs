@@ -1,4 +1,6 @@
 ﻿
+using CryptoString;
+
 public static class StartUp
 {
     public static void Main()
@@ -10,5 +12,7 @@ public static class StartUp
 
         string decryptedText = AesEncryptDecrypt.Decrypt(encryptedText);
         Console.WriteLine($"Decrypted: {decryptedText}");
+
+        TestClass.TestTime(50000, 50000);
     }
 }
