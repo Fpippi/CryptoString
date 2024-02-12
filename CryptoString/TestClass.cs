@@ -58,6 +58,10 @@ namespace CryptoString
                 }
             }
 
+            Console.WriteLine("Key: " + Convert.ToBase64String(AesEncryptDecrypt.Key));
+            Console.WriteLine("IV: " + Convert.ToBase64String(AesEncryptDecrypt.IV));
+
+
         }
     }
 }

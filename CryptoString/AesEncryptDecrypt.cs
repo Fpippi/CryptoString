@@ -6,10 +6,10 @@ using System.Text;
 public class AesEncryptDecrypt
 {
     //32 for key
-    private static readonly byte[] Key = Encoding.UTF8.GetBytes("ChiavePippo".PadRight(32, '\0')).Take(32).ToArray();
+    public static byte[] Key;
 
     //16 bit for initialization vector 
-    private static readonly byte[] IV = Encoding.UTF8.GetBytes("VettoreIniziale".PadRight(16, '\0')).Take(16).ToArray();
+    public static byte[] IV;
 
     public static string Encrypt(string plainText)
     {
@@ -53,16 +53,6 @@ public class AesEncryptDecrypt
                     }
                 }
             }
-        }
-    }
-
-    private static byte[] GenerateRandomKey(int keyLengthInBits)
-    {
-        using (var rng = new RNGCryptoServiceProvider())
-        {
-            byte[] key = new byte[keyLengthInBits / 8];
-            rng.GetBytes(key);
-            return key;
         }
     }
 }
